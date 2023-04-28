@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style_activities.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <link rel="icon" href="images/logo1.png" />
+    <title>China Map</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/china.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar_content">
+            <!-- 关于logo的盒子 -->
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="main.html">Homepage</a>
+                </li>
+                <li>
+                    <a href="index.html">China Map</a>
+                </li>
+                <li><a href="">Travel Notes<i class="fas fa-caret-down"></i></a>
+                    <ul>
+                        <!-- 游记点开的这个网页要做，相当于做一个索引面，放入旅行地点，点开就是这个地方的游记，这里的activities.html可以用作每一篇游记的格式，直接修改内容， -->
+                        <li><a href="mian.html #image-set-sec">Popular travel notes</a></li>>Popular travel notes</a>
+                </li>
+                <!-- 这里的中国节我觉着可以保留，这个网页不用修改，直接将events-and-festivals.html里面的图片和文字描述改一下就可以 -->
+                <li><a href="festivals.html">Chinese festivals and activities</a></li>
+            </ul>
+            </li>
+            <!-- 以下两个网页都要写，都还没有做 -->
+            <li><a href="">Destination<i class="fas fa-caret-down"></i></a>
+                <ul>
+                    <!-- 个人想法，目的地点开可以链接到游记里面 -->
+                    <li><a href="Popular Tourism Top10.html">Popular Tourism Top10</a></li>
+                    <li><a href="Travel In Seasons.html">Travel in Seasons</a></li>
+                </ul>
+            </li>
+            <!-- 住宿这里可以在现有的accomodations.html基础上修改 -->
+            <li><a href="hotel.html">Accommodation</a>
+            </li>
+            <!-- 这个订票界面没有做 -->
+            <li><a href="ticket.html">Ticket Purchase</a>
+            </li>
+            <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container" style="height: 800px;width:1200px;background:white;margin:100px 0 0;"></div>
+    <style>
+
+    </style>
+    <script type="text/javascript">
+        // 全国省份列表
+        var dataMap = [{ name: 'Beijing' }, { name: 'Tianjin' }, { name: 'Shanghai' }, { name: 'Chongqing' }, { name: 'Hebei' }, { name: 'Henan' }, { name: 'Yunnan' }, { name: 'Liaoning' }, { name: 'Heilongjiang' }, { name: 'Hunan' }, { name: 'Anhui' }, { name: 'Shandong' },
+        { name: 'Xinjiang' }, { name: 'Jiangsu' }, { name: 'Zhejiang' }, { name: 'Jiangxi' }, { name: 'Hubei' }, { name: 'Guangxi' }, { name: 'Gansu' }, { name: 'Shanxi' }, { name: 'Inner Mongolia' }, { name: 'Shaanxi' }, { name: 'Jilin' }, { name: 'Fujian' }, { name: 'Guizhou' },
+        { name: 'Guangdong' }, { name: 'Qinhai' }, { name: 'Tibet' }, { name: 'Sichuan' }, { name: 'Ningxia' }, { name: 'Hainan' }, { name: 'Taiwan' }, { name: 'Hong Kong' }, { name: 'Macao' }]
+        // 需要在页面上直接标记出来的城市
+        var specialMap = ['Zhejiang', 'Yunnan', 'Shaanxi', 'Hubei'];
+        // 对dataMap进行处理，使其可以直接在页面上展示
+        for (var i = 0; i < specialMap.length; i++) {
+            for (var j = 0; j < dataMap.length; j++) {
+                if (specialMap[i] == dataMap[j].name) {
+                    dataMap[j].selected = true;
+                    break;
+                }
+
+            }
+        }
+        // 绘制图表，准备数据
+        var option = {
+            tooltip: {
+                formatter: function (params) {
+                    var name = params.name;
+                    var info = '';
+
+                    if (name == 'Beijing') {
+                        info = '<p style="font-size:18px">Beijing</p><p style="font-size:14px">Beijing, the capital city of China, is one</p><p> of the most famous and popular tourist <p></p>destinations in the world. </p>';
+                        setTimeout(function () {
+                            window.location.href = 'beijing.html';
+                        }, 2000);
+                    }
+                    else if (name == 'Tianjin') {
+                        info = '<p style="font-size:18px">Tianjin</p><p style="font-size:14px">Tianjin, located in northern China, is a </p><p>modern and rapidly developing city with a </p><p>rich history and cultural heritage. </p>';
+                    }
+                    else if (name == 'Shanghai') {
+                        info = '<p style="font-size:18px">Shanghai</p><p style="font-size:14px">Shanghai is one of the most popular </p><p>tourist destinations in China, known for </p><p>its modern skyline, historical landmarks,</p><p> and diverse cuisine. </p>';
+                        setTimeout(function () {
+                            window.location.href = 'shanghai.html';
+                        }, 2000);
+                    }
+                    //                var info = '<p style="font-size:18px">' + params.name + '</p><p style="font-size:14px">这里可以写一些，想展示在页面上的别的信息</p>'
+
+
+                    return info;
+
+
+                },
+                backgroundColor: "#ff7f50",
+                textStyle: { color: "#fff" }
+            },
+            series: [
+                {
+                    name: '中国',
+                    type: 'map',
+                    mapType: 'china',
+                    selectedMode: 'multiple',
+                    label: {
+                        normal: {
+                            show: true,//显示省份标签
+                            // textStyle:{color:"#c71585"}//省份标签字体颜色
+                        },
+                        emphasis: {
+                            show: true,//对应的鼠标悬浮效果
+                            // textStyle:{color:"#800080"}
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            borderWidth: .5,//区域边框宽度
+                            // borderColor: '#009fe8',//区域边框颜色
+                            // areaColor:"#ffefd5",//区域颜色
+                        },
+                        emphasis: {
+                            borderWidth: .5,
+                            borderColor: '#4b0082',
+                            areaColor: "#CCFFFF",
+                        }
+                    },
+                    data: dataMap
+                }
+            ]
+        };
+
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('container'));
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+
+
+
+    <div style="text-align:center;clear:both;">
+        <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+        <script src="/follow.js" type="text/javascript"></script>
+    </div>
+
+</body>
+<section>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-refs-content-1">
+                <h5>The <b>Travel</b></h5>
+                <ul>
+                    <li>It is for internatuonal friends to travel around China</li>
+                    <li>We recommend some famous cities and attractions in China</li>
+                    <li>Whether it is natural landscape or cultural landscape</li>
+                    <li>We are committed to creating a "tourism artifact"</li>
+                </ul>
+            </div>
+            <div class="footer-refs-content-2">
+                <h5>Tourism <b>strategy</b></h5>
+                <ul>
+                    <li>
+                        <a href="beijing.html">Beijing tourism guide</a>
+                    </li>
+                    <li>
+                        <a href="shanghai.html">Shanghai tourism guide</a>
+                    </li>
+                    <li>
+                        <a href="kunming.html">Kunming tourism guide</a>
+                    </li>
+                    <li>
+                        <a href="xian.html">Xi 'an tourism guide</a>
+                    </li>
+                    <li>
+                        <a href="dali.html">Dali tourism guide</a>
+                    </li>
+                    <li>
+                        <a href="guilin.html">Guilin tourism guides</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-refs-content-3">
+                <h5>Our <b>Helps</b></h5>
+                <ul>
+                    <li><a href="hotel.html">Homestay recommendation</a></li>
+                    <li><a href="hotel.html">Hotel recommendation</a></li>
+                    <li><a href="ticket.html">Air ticket</a></li>
+                    <li><a href="ticket.html">Train ticket</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lower-footer">
+            <div class="lower-footer-content">
+                <div id="footer-align-left">
+                    All Rights Reserved. 2023 China Travel.
+                </div>
+                <div id="footer-align-right">
+                    <a href="#"></a><i class="fab fa-facebook-square fa-3x"></i></a>
+                    <a href="#"></a><i class="fab fa-twitter-square fa-3x"></i></a>
+                    <a href="#"></a><i class="fab fa-google-plus-square fa-3x"></i></a>
+                    <a href="#"></a><i class="fab fa-youtube-square fa-3x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>

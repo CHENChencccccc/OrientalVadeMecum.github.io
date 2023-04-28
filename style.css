@@ -1,0 +1,502 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font: 1em Roboto;
+}
+
+header {
+	width: 100%;
+	height: 100vh;
+	background: url(images/headerbackgrand3.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/*//////////////////////////navbar\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+/* 解释一下为何用两个div，个人理解第一个盒子用于划定区域，第二个盒子用于划定内容的区域 */
+.navbar {
+	width: 100%;
+	height: 70px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar_content {
+	width: 85%;
+	margin: 0 auto;
+}
+
+/* 导航栏图标的div */
+.navbar .logo {
+	float: right;
+	height: 50px;
+	padding: 10px 0px;
+}
+
+/* 图标div中的图片 */
+.navbar .logo img {
+	width: auto;
+	height: 100%;
+}
+
+/* 这里的宽度应该是ul占div的宽度，但是是否是div中除去图片以后的宽度呢？ */
+.navbar .menu {
+	width: 100%;
+}
+
+/* 对内部所有ul的设置 */
+.navbar .menu,
+.navbar .menu ul {
+	position: absolute;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* 对所有链接的设置 */
+.navbar .menu li a,
+.navbar .menu ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* 对内部所有li的设置 */
+.navbar .menu li {
+	/* 以行内块元素的形式展现，否则不成行 */
+	display: inline-block;
+	padding: 25px 0;
+	transition: 0.3s;
+}
+
+/* 设置点击链接后的背景颜色 */
+.navbar .menu li:hover {
+	background: #444;
+}
+
+/* 设置块间距 */
+.navbar .menu li a {
+	padding: 20px;
+}
+
+/* 隐藏下拉栏 */
+.navbar .menu ul {
+	display: none;
+	margin-top: 25px;
+}
+
+/* 下拉栏中的元素变为块元素，因为继承了上面的行内块元素，这里要变回去 */
+.navbar .menu ul li {
+	padding: 15px 0px;
+	display: block;
+	background: #000;
+}
+
+.navbar .menu ul li:hover {
+	background: #333;
+}
+
+
+.navbar .menu li:hover ul {
+	display: block;
+}
+
+/* 对字体的样式进行修饰 */
+.fas {
+	padding-left: 8px;
+}
+
+/*//////////////////////////Header title div\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+/* 下面的四个title都是关于字体的调整 */
+.header-title {
+	position: absolute;
+	/* 大小写转换 */
+	text-transform: uppercase;
+	text-align: center;
+	height: 300px;
+	font-family: Roboto;
+	color: white;
+	top: 32%;
+	left: 29%;
+	transform: (50%, 50%)
+}
+
+#main-title {
+	font-weight: 100;
+	font-size: 60px;
+	text-shadow: 10px 5px 10px black;
+}
+
+#sub-title {
+	font-family: Nunito;
+	font-size: 25px;
+	letter-spacing: 3px;
+	word-spacing: 5px;
+	margin: 10px 0 20px 0;
+	text-shadow: 5px 5px 10px black;
+}
+
+#main-title span {
+	font-weight: 700;
+}
+
+#search-bar {
+	margin: 30px 0;
+	display: inline-flex;
+}
+
+#search-bar input {
+	padding: 0 20px;
+	line-height: 50px;
+	width: 480px;
+	border: none;
+	font-size: 18px;
+	font-family: Roboto;
+	font-weight: 700;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+#search-bar input:focus {
+	background: rgba(255, 255, 255, 1);
+}
+
+#search-bar button {
+	background: rgba(28, 175, 38, 0.6);
+	border: none;
+	width: 110px;
+	line-height: 50px;
+}
+
+#search-bar button:hover {
+	/* 体现了交互性，放到这个地方会从光标变成小手的标识 */
+	cursor: pointer;
+	background: rgba(28, 175, 38, 1);
+}
+
+#search-bar button .fa-search {
+	vertical-align: middle;
+	color: #fff;
+}
+
+/*/////////////////////////////image set\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.image-set {
+	width: 90%;
+	margin: 70px 30px 70px 110px;
+}
+
+/* 这里这个relative也不知道为啥 */
+.image-set .image-box {
+	display: inline-flex;
+	position: relative;
+	margin: 0 10px 0;
+
+}
+
+.image-set img {
+	width: 300px;
+	height: auto;
+}
+
+/* 这个部分挺厉害的，没搞明白 */
+.image-set .image-box .image-content {
+	position: absolute;
+	overflow: hidden;
+	bottom: 1%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 0%;
+	transition: .5s ease;
+
+}
+
+.image-set .image-box .image-content .text {
+	position: absolute;
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: auto;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	/* 这一部分也看不懂啦 */
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.image-set .image-box .image-content .text a {
+	text-decoration: none;
+}
+
+.image-set .image-box .image-content .text h1 {
+	color: #fff;
+	font-family: Nunito;
+	font-size: 50px;
+}
+
+.image-set .image-box:hover .image-content {
+	cursor: pointer;
+	height: 25%;
+	transition: 0.5s;
+}
+
+/*////////////////////top attraction\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.top-attractions {
+	width: 100%;
+	height: auto;
+	background: url(images/bg2.jpg);
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.top-attractions-back {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.65);
+}
+
+.top-attractions-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 0px 0 40px 0;
+}
+
+.attractions-topic {
+	width: 40%;
+	margin: 0 auto;
+	padding: 15px 0;
+	background: #06a809;
+	border-radius: 0 0 50px 50px;
+}
+
+.attractions-topic h1 {
+	font-family: Nunito;
+	font-size: 50px;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 2px;
+	margin: 0;
+}
+
+/* 下面两个是关于白线装饰的 */
+.sinharaja {
+	padding: 20px;
+	border-left: 3px dashed #fff;
+	border-bottom: 3px dashed #fff;
+}
+
+.sri-padaya {
+	padding: 20px;
+	border-right: 3px dashed #fff;
+}
+
+/* 两个小标题的设置 */
+.sinharaja-content h3,
+.sri-padaya-content h3 {
+	color: #fff;
+	font-family: Nunito;
+	letter-spacing: 1px;
+}
+
+/* 白线内内容的设置 */
+.sinharaja-content,
+.sri-padaya-content {
+	width: 100%;
+	display: inline-flex;
+}
+
+/* 文字部分的设置 */
+.sinharaja-para,
+.sri-padaya-para {
+	width: 65%;
+}
+
+/* 段落部分的设置 */
+.sinharaja-para p,
+.sri-padaya-para p {
+	font-size: 14px;
+	font-family: Nunito;
+	color: #999;
+}
+
+/* 链接部分的设置 */
+.sinharaja-para a,
+.sri-padaya-para a {
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 2px solid #fff;
+	border-radius: 15px 0 15px 0;
+	transition: 0.4s;
+}
+
+.sinharaja-para a:hover,
+.sri-padaya-para a:hover {
+	background: #fff;
+	color: #000;
+}
+
+.sri-padaya-para p a {
+	text-align: right;
+}
+
+/* 这两个参数后期可能需要修改 */
+.sinharaja-image {
+	width: 32%;
+	padding: 10px 0px 0px 25px;
+}
+
+.sri-padaya-image {
+	width: 30%;
+	padding: 20px 25px 0px 0px;
+}
+
+.sinharaja-image img,
+.sri-padaya-image img {
+	width: 100%;
+	/* 转动的时间 */
+	transition: 0.5s;
+}
+
+/* 转动一定的角度 */
+.sinharaja-image img:hover {
+	transform: rotate(-4deg);
+}
+
+.sri-padaya-image img:hover {
+	transform: rotate(4deg);
+}
+
+/* 下面这两个是边框的白线装饰 */
+.vertical-divider1 {
+	margin: 50px 830px 0px 0px;
+	border-top: 3px dashed #fff;
+}
+
+.vertical-divider2 {
+	margin: 0px 0px 0px 830px;
+	border-top: 3px dashed #fff;
+}
+
+
+/*/////////////////////////footer\\\\\\\\\\\\\\\\*/
+
+.footer {
+	background: #112233;
+}
+
+.footer-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+	font-family: Roboto;
+	font-weight: 100;
+	font-size: 23px;
+	color: whitesmoke;
+}
+
+.footer-refs-content-1 h5 b,
+.footer-refs-content-2 h5 b,
+.footer-refs-content-3 h5 b {
+	font-weight: 700;
+}
+
+.footer-refs-content-1 ul,
+.footer-refs-content-2 ul,
+.footer-refs-content-3 ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+
+.footer-refs-content-1 ul li {
+	color: whitesmoke;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.footer-refs-content-2 ul li a,
+.footer-refs-content-3 ul li a {
+	color: whitesmoke;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 30px;
+	transition: 0.4s;
+}
+
+.footer-refs-content-1 ul li a:hover,
+.footer-refs-content-2 ul li a:hover,
+.footer-refs-content-3 ul li a:hover {
+	color: #42b3f4;
+	padding-left: 10px;
+}
+
+.footer-content {
+	display: flex;
+}
+
+.footer-refs-content-1 {
+	width: 43%;
+}
+
+.footer-refs-content-2 {
+	width: 33%;
+}
+
+.footer-refs-content-3 {
+	width: 24%;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+	padding-bottom: 10px;
+	margin-right: 100px;
+	border-bottom: 2px solid #fff;
+}
+
+.lower-footer {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 13px;
+	font-family: Roboto;
+	font-weight: 300;
+	background: #112220;
+}
+
+.lower-footer-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px 0;
+	display: flex;
+}
+
+#footer-align-left {
+	width: 85%;
+	padding: 13px 0;
+}
+
+#footer-align-right {
+	text-align: right;
+	width: 15%;
+	padding: 0;
+}
+
+#footer-align-right a {
+	padding: 0 4px;
+	color: #fff;
+	transition: 0.3s;
+}
+
+#footer-align-right a:hover {
+	color: #43b9e0;
+}

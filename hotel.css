@@ -1,0 +1,377 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font: 1em Roboto;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url(images/hotelbgi.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*//////////////////////////navbar\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+/* 解释一下为何用两个div，个人理解第一个盒子用于划定区域，第二个盒子用于划定内容的区域 */
+.navbar {
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar_content {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* 导航栏图标的div */
+.navbar .logo {
+    float: right;
+    height: 50px;
+    padding: 10px 0px;
+}
+
+/* 图标div中的图片 */
+.navbar .logo img {
+    width: auto;
+    height: 100%;
+}
+
+/* 这里的宽度应该是ul占div的宽度，但是是否是div中除去图片以后的宽度呢？ */
+.navbar .menu {
+    width: 100%;
+}
+
+/* 对内部所有ul的设置 */
+.navbar .menu,
+.navbar .menu ul {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 对所有链接的设置 */
+.navbar .menu li a,
+.navbar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 对内部所有li的设置 */
+.navbar .menu li {
+    /* 以行内块元素的形式展现，否则不成行 */
+    display: inline-block;
+    padding: 25px 0;
+    transition: 0.3s;
+}
+
+/* 设置点击链接后的背景颜色 */
+.navbar .menu li:hover {
+    background: #444;
+}
+
+/* 设置块间距 */
+.navbar .menu li a {
+    padding: 20px;
+}
+
+/* 隐藏下拉栏 */
+.navbar .menu ul {
+    display: none;
+    margin-top: 25px;
+}
+
+/* 下拉栏中的元素变为块元素，因为继承了上面的行内块元素，这里要变回去 */
+.navbar .menu ul li {
+    padding: 15px 0px;
+    display: block;
+    background: #000;
+}
+
+.navbar .menu ul li:hover {
+    background: #333;
+}
+
+
+.navbar .menu li:hover ul {
+    display: block;
+}
+
+/* 对字体的样式进行修饰 */
+.fas {
+    padding-left: 8px;
+}
+
+.header-title {
+    position: absolute;
+    text-align: center;
+    height: 300px;
+    font-family: Roboto;
+    color: white;
+    top: 35%;
+    left: 0%;
+    transform: (50%, 50%)
+}
+
+#main-title {
+    font-weight: 100;
+    font-size: 60px;
+    text-shadow: 10px 5px 10px black;
+    text-transform: uppercase;
+}
+
+#sub-title {
+    font-family: Nunito;
+    font-size: 25px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    margin: 10px 0 20px 0;
+    text-shadow: 5px 5px 10px black;
+}
+
+/* \\\\\\\\\\主体部分\\\\\\\\\\\*/
+
+.main-hotel {
+    width: 100%;
+    font-family: Roboto;
+}
+
+.all {
+    width: 100%;
+    background: white;
+}
+
+.top-three {
+    width: 60%;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+.top-three h3{
+	text-align:center;
+	color: #27bcad;
+}
+.top2,
+.top3 {
+    width: 30%;
+	margin-top:100px
+	
+}
+.top1 {
+    width: 40%;
+	margin-left:30px;
+	margin-right:30px;
+	background-color: #d5d9e0;
+	border-radius: 20px;
+	height:650px;
+	padding:10px 0;
+}
+.top1 p{
+	padding-left:10px;
+}
+.top2{
+	background-color: #d5d9e0;
+	border-radius: 20px;
+	padding:0 10px;
+	height:650px;
+}
+.top3{
+	background-color: #d5d9e0;
+	border-radius: 20px;
+	padding:10px 10px;
+	height:650px;
+}
+
+.jiangbei {
+    margin-left: 30px;
+}
+
+.jiangbei1 {
+    margin-left: 60px;
+}
+#weiyena{
+	padding-left:15px;
+}
+
+/*使用模板*/
+.container{
+	width: 80%;
+	margin: 0 auto;
+	margin-top:200px;
+}
+.container .full-div{
+	width: 100%;
+	height:200px;
+	display: flex;
+	margin-bottom:1em;
+	padding: 20px; 
+	background-color: #d5d9e0;
+	border-radius: 20px;
+	transition: 0.4s;
+	
+}
+.container .image-div{
+	width: 20%;
+	height:200px;
+}
+.container .image-div img{
+	width: 100%;
+	height:200px;
+}
+.container .para-content{
+	width: 65%;
+	padding: 0 0 30px 20px;
+	font-size: .88em;
+	text-align: justify;
+}
+.container .para-content h3{
+	font-weight: bolder;
+	color: #27bcad;
+	font-size: 22px;
+	padding: 0;
+}
+.container .para-content .para-content-link{
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	transition: .2s linear;
+}
+.container .para-content .para-content-link:hover{
+	text-decoration: none;
+	background-color: orange;
+	color: #000;
+}
+.para-content-link{
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	transition: .2s linear;
+}
+.para-content-link:hover{
+	text-decoration: none;
+	background-color: orange;
+	color: #000;
+}
+/* \\\\\\\\\\footer部分\\\\\\\\\\\*/
+.footer {
+    background: #112233;
+}
+
+.footer-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 23px;
+    color: whitesmoke;
+}
+
+.footer-refs-content-1 h5 b,
+.footer-refs-content-2 h5 b,
+.footer-refs-content-3 h5 b {
+    font-weight: 700;
+}
+
+.footer-refs-content-1 ul,
+.footer-refs-content-2 ul,
+.footer-refs-content-3 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: whitesmoke;
+}
+
+.footer-refs-content-1 ul li {
+    color: whitesmoke;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.footer-refs-content-2 ul li a,
+.footer-refs-content-3 ul li a {
+    color: whitesmoke;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 30px;
+    transition: 0.4s;
+}
+
+.footer-refs-content-1 ul li a:hover,
+.footer-refs-content-2 ul li a:hover,
+.footer-refs-content-3 ul li a:hover {
+    color: #42b3f4;
+    padding-left: 10px;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-refs-content-1 {
+    width: 43%;
+}
+
+.footer-refs-content-2 {
+    width: 33%;
+}
+
+.footer-refs-content-3 {
+    width: 24%;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+    padding-bottom: 10px;
+    margin-right: 100px;
+    border-bottom: 2px solid #fff;
+}
+
+.lower-footer {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto;
+    font-weight: 300;
+    background: #112220;
+}
+
+.lower-footer-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0;
+    display: flex;
+}
+
+#footer-align-left {
+    width: 85%;
+    padding: 13px 0;
+}
+
+#footer-align-right {
+    text-align: right;
+    width: 15%;
+    padding: 0;
+}
+
+#footer-align-right a {
+    padding: 0 4px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#footer-align-right a:hover {
+    color: #43b9e0;
+}

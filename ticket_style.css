@@ -1,0 +1,474 @@
+*{
+	font: 1em Roboto;
+}
+.navbar {
+	width: 100%;
+	height: 70px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar_content {
+	width: 85%;
+	margin: 0 auto;
+}
+
+/* 导航栏图标的div */
+.navbar .logo {
+	float: right;
+	height: 50px;
+	padding: 10px 0px;
+}
+
+/* 图标div中的图片 */
+.navbar .logo img {
+	width: auto;
+	height: 100%;
+}
+
+/* 这里的宽度应该是ul占div的宽度，但是是否是div中除去图片以后的宽度呢？ */
+.navbar .menu {
+	width: 100%;
+}
+
+/* 对内部所有ul的设置 */
+.navbar .menu,
+.navbar .menu ul {
+	position: absolute;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* 对所有链接的设置 */
+.navbar .menu li a,
+.navbar .menu ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* 对内部所有li的设置 */
+.navbar .menu li {
+	/* 以行内块元素的形式展现，否则不成行 */
+	display: inline-block;
+	padding: 25px 0;
+	transition: 0.3s;
+}
+
+/* 设置点击链接后的背景颜色 */
+.navbar .menu li:hover {
+	background: #444;
+}
+
+/* 设置块间距 */
+.navbar .menu li a {
+	padding: 20px;
+}
+
+/* 隐藏下拉栏 */
+.navbar .menu ul {
+	display: none;
+	margin-top: 25px;
+}
+
+/* 下拉栏中的元素变为块元素，因为继承了上面的行内块元素，这里要变回去 */
+.navbar .menu ul li {
+	padding: 15px 0px;
+	display: block;
+	background: #000;
+}
+
+.navbar .menu ul li:hover {
+	background: #333;
+}
+
+
+.navbar .menu li:hover ul {
+	display: block;
+}
+
+/* 对字体的样式进行修饰 */
+.fas {
+	padding-left: 8px;
+}
+header{
+	width: 100%;
+	height: 65vh;
+	background: #121442;
+	background-position: center;
+	background-size: cover;
+}
+#activities-header{
+	height: 65vh;
+	background-color: rgba(0,0,0,0.5);
+}
+.header-title{
+	position: absolute;
+	text-transform: uppercase;
+	text-align: center;
+	height: 300px;
+	font-family: Roboto;
+	color: white;
+	top: 32%;
+	left: 24%;
+	transform: (50%, 50%);
+}
+.lower_navbar{
+	width: 100%;
+	height: 70px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.7);
+}
+/*////////////////Tabs///////////////////*/
+
+h1 {
+  color: white;
+  font-family: arial, sans-serif;
+  margin: 1em auto;
+  width: 85%;
+
+
+}
+
+.tabordion-sec{
+	position: absolute;
+}
+.tabordion-img{
+	width: 100%;
+}
+.tabordion h1{
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 30px;
+	padding: 10px 0;
+	margin: 0;
+	width: 100%;
+}
+.tabordion {
+  color: #333;
+  display: block;
+  font-family: arial, sans-serif;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+  width: 85%;
+}
+
+.tabordion input[name="sections"] {
+  position: absolute;
+}
+
+.tabordion section {
+  display: block;
+}
+
+.tabordion section label {
+  background: #ccc;
+  border:1px solid #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 20px;
+  position: relative;
+  width: 180px;
+  z-index:100;
+}
+
+.tabordion section article {
+  display: none;
+  left: 230px;
+  min-width: 300px;
+  padding: 0 0 0 21px;
+  position: absolute;  
+  top: 0;
+}
+
+.tabordion section article:after {
+  background-color: #ccc;
+  bottom: 0;
+  content: "";
+  display: block;
+  left:-229px;
+  position: absolute;
+  top: 0;
+  width: 220px;
+}
+
+.tabordion input[name="sections"]:checked + label { 
+  background: #eee;
+  color: #999;
+}
+
+.tabordion input[name="sections"]:checked ~ article {
+  display: block;
+}
+a{
+  text-decoration: none;
+  color: darkorange;
+}
+a:hover{
+  text-decoration: overline;
+}
+
+
+
+/****************************************************/
+
+body{
+background-color:#483D8B;//ticket
+}
+
+.ticket{
+	width:40%;
+	position:center;
+	margin-left:50px;
+	margin-bottom:178px;
+
+
+}
+
+.ticket-img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 50px 5px 50px;
+  
+}
+
+.flight-list ul {   
+  list-style-type: none;   
+  margin: 5px;   
+  padding: 0;   
+  margin-top:50px;
+}   
+             
+.flight-list li {   
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;   
+  border-bottom: 2px solid #ccc; 
+  text-align:center;
+  list-style:none;
+  display: flex;
+  align-items: center;
+  	margin:5px;
+	border-radius:20px;
+	background:white;
+	opacity:0.6;
+}   
+             
+.flight-list li:last-child {   
+  border: none;   
+}   
+             
+.flight-list li a {   
+  text-decoration: none;   
+  color: #000;   
+  display: flex;
+  align-items: center;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;   
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;   
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;   
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;   
+  transition: font-size 0.3s ease, background-color 0.3s ease;   
+}   
+             
+.flight-list li a:hover {   
+  font-size: 30px;   
+  background: #f6f6f6;   
+}  
+
+
+
+.ticket-img img {
+  width: 250px;
+  float:left;
+}
+
+.ticket-img img:hover {
+  transform: scale(1.1);
+}
+
+.flight-list li {
+  display: flex;
+  align-items: center;
+  font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  list-style: none;
+  position: relative;
+ 
+}
+
+.flight-list li:hover {
+  background: #f6f6f6;
+}
+
+.flight-list li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: calc(100% - 120px);
+  height:40px;
+  text-align:center;
+  padding-top:3px;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.flight-list li:hover a {
+  font-size: 40px;
+   z-index: 2;
+   color:green;
+   padding-bottom:5px;
+}
+
+
+
+.flight-list li:hover img {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+			
+            background-color: rgb(230, 134, 134);
+            position: absolute;
+        }
+
+        video {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+/*/////////////////////////footer\\\\\\\\\\\\\\\\*/
+
+.footer {
+	background: #112233;
+}
+
+.footer-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+	font-family: Roboto;
+	font-weight: 100;
+	font-size: 23px;
+	color: whitesmoke;
+}
+
+.footer-refs-content-1 h5 b,
+.footer-refs-content-2 h5 b,
+.footer-refs-content-3 h5 b {
+	font-weight: 700;
+}
+
+.footer-refs-content-1 ul,
+.footer-refs-content-2 ul,
+.footer-refs-content-3 ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: whitesmoke;
+}
+
+.footer-refs-content-1 ul li {
+	color: whitesmoke;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.footer-refs-content-2 ul li a,
+.footer-refs-content-3 ul li a {
+	color: whitesmoke;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 30px;
+	transition: 0.4s;
+}
+
+.footer-refs-content-1 ul li a:hover,
+.footer-refs-content-2 ul li a:hover,
+.footer-refs-content-3 ul li a:hover {
+	color: #42b3f4;
+	padding-left: 10px;
+}
+
+.footer-content {
+	display: flex;
+}
+
+.footer-refs-content-1 {
+	width: 43%;
+}
+
+.footer-refs-content-2 {
+	width: 33%;
+}
+
+.footer-refs-content-3 {
+	width: 24%;
+}
+
+.footer-refs-content-1 h5,
+.footer-refs-content-2 h5,
+.footer-refs-content-3 h5 {
+	padding-bottom: 10px;
+	margin-right: 100px;
+	border-bottom: 2px solid #fff;
+}
+
+.lower-footer {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 13px;
+	font-family: Roboto;
+	font-weight: 300;
+	background: #112220;
+}
+
+.lower-footer-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px 0;
+	display: flex;
+}
+
+#footer-align-left {
+	width: 85%;
+	padding: 13px 0;
+}
+
+#footer-align-right {
+	text-align: right;
+	width: 15%;
+	padding: 0;
+}
+
+#footer-align-right a {
+	padding: 0 4px;
+	color: #fff;
+	transition: 0.3s;
+}
+
+#footer-align-right a:hover {
+	color: #43b9e0;
+}
+
+
+
+ 
+
